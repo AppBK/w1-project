@@ -15,7 +15,25 @@
 */
 
 function validHexCode(string) {
-    
+    if (string[0] !== '#') {
+        return false;
+    }
+    if (string.length !== 7) {
+        return false;
+    }
+
+    let validHex = 'abcdefABCDEF0123456789';
+
+    for (let i = 1; i < string.length; i++) {
+        let char = string[i];
+
+        if (validHex.includes(char)) {
+            continue;
+        } else {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

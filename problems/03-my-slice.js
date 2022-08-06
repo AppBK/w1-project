@@ -20,7 +20,20 @@
 */
 
 function mySlice(arr, start, end = arr.length) {
-    
+    let spliced = [];
+    if (start < 0) {
+        start = 0;
+    }
+
+    while (end > arr.length) {
+        end--;
+    }
+
+    for (let i = start; i < end; i++) {
+        let ele = arr[i];
+        spliced.push(ele);
+    }
+    return spliced;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -5,7 +5,7 @@
     Given a string of numbers,
     translate the string into a sequence of numbers that describes the count of
     identical digits.
-    
+
     For example, the string "1" has "one 1" and would be
     translated to 11.
     The string "11" is interpreted as "two 1s" which is
@@ -21,7 +21,21 @@
 */
 
 function sequenceOfNumbers(string) {
-    
+    let output = '';
+
+    for (let i = 0; i < string.length; i++) {
+        let count = 1;
+        let char = string[i];
+        let index = i + 1;
+
+        while (char === string[index]) {
+            count++;
+            index++;
+        }
+        i = --index;
+        output += count + char;
+    }
+    return output;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

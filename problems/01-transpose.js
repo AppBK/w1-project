@@ -30,7 +30,18 @@
 */
 
 function transpose(arr) {
-    
+    let matrix = [];
+    let numCols = arr[0].length;
+    let numRows = arr.length;
+
+    for (let col = 0; col < numCols; col++) {
+        let newRow = [];
+        for (let row = 0; row < numRows; row++) {
+            newRow.push(arr[row][col])
+        }
+        matrix.push(newRow);
+    }
+    return matrix;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
